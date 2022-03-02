@@ -40,8 +40,6 @@
     align-items: flex-start;
     flex: 0.65;
     height: 100%;
-    position: relative;
-    bottom: 50px;
 
     @media screen and (max-width: 1200px) {
         width: 100%;
@@ -102,8 +100,6 @@
     align-items: flex-start;
     height: 100%;
     margin-left: 1rem;
-    position: relative;
-    bottom: 50px;
 
     div{
         height: 100px;
