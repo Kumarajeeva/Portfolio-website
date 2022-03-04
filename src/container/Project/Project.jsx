@@ -39,7 +39,7 @@ const Project = () => {
 
   return (
     <>
-      <h2 className="head-text">
+      <h2 className="head-text project-heading">
         My<span> Projects </span>Section
       </h2> 
 
