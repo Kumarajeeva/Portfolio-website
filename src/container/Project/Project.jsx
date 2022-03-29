@@ -5,8 +5,9 @@ import {AppWrap, MotionWrap} from "../../wrapper";
 import {urlFor,client} from "../../client";
 import "./Project.scss";
 
+const tabs= ["React", "MERN Full Stack", "Node JS with MongoDB", "Javascript","All"];
 const Project = () => {
-  const [activeFilter, setActiveFilter] = useState("All");
+  const [activeFilter, setActiveFilter] = useState("React");
   const [animateCard, setAnimateCard] = useState({y: 0, opacity: 1});
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
@@ -17,11 +18,11 @@ const Project = () => {
     client.fetch(query)
       .then((data) =>{
         setWorks(data);
-        setFilterWork(data);
+        setFilterWork(data.filter((datum) => datum.tags.includes("React")));
       })
   }, [])
-  
 
+  
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
     setAnimateCard([{y: 100, opacity: 0}]);
@@ -38,13 +39,14 @@ const Project = () => {
   }
 
   return (
+
     <>
       <h2 className="head-text project-heading">
         My<span> Projects </span>Section
       </h2> 
 
       <div className="app__work-filter">
-        {["React", "MERN Full Stack", "Node JS with MongoDB", "Javascript", "All"].map((item,index) => (
+        {tabs.map((item,index) => (
           <div
             key={index}
             onClick={() => handleWorkFilter(item)}
@@ -60,7 +62,7 @@ const Project = () => {
           transition={{duration: 0.5, delayChildren: 0.5}}
           className="app__work-portfolio"
       >
-          {filterWork.map((work, index) => (
+          {filterWork.map((work, index) => ( 
             <div className="app__work-item app__flex" key={index}>
               <div className="app__work-img app__flex">
                 <img src={urlFor(work.imgUrl)} alt={work.name} />
