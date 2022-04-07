@@ -5,7 +5,7 @@ import {AppWrap, MotionWrap} from "../../wrapper";
 import {urlFor,client} from "../../client";
 import "./Project.scss";
 
-const tabs= ["React", "MERN Full Stack", "Node JS with MongoDB", "Javascript","All"];
+const tabs= ["React", "MERN Full Stack", "Node JS with MongoDB","All"];
 const Project = () => {
   const [activeFilter, setActiveFilter] = useState("React");
   const [animateCard, setAnimateCard] = useState({y: 0, opacity: 1});
@@ -42,7 +42,7 @@ const Project = () => {
 
     <>
       <h2 className="head-text project-heading">
-        My<span> Projects </span>Section
+        My Sample<span> Projects </span>Section
       </h2> 
 
       <div className="app__work-filter">
