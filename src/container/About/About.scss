@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    margin-top: 1rem;
+    margin-top: 0rem;
 }
 
 .app__profile-item{
@@ -22,7 +22,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    margin: 4rem;
+    margin: 2rem 4rem 4rem 4rem;
+    
 
     img{
         width: 100%;
@@ -40,4 +41,6 @@
         }
     }
 }
+
+
 
